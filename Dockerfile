@@ -36,7 +36,7 @@ RUN apt install -y --reinstall ca-certificates wget && \
     update-ca-certificates && \
     git config --global http.sslCAinfo /etc/ssl/certs/ca-certificates.crt
 
-RUN mkdir -p /workspace/webc && cd /workspace/webc &&\
-    git clone https://github.com/NEUQ-2084team-Compiler/WebC-llvm-compiler.git &&\
-    cd WebC-llvm-compiler && cmake -B $(pwd)/build -DCMAKE_BUILD_TYPE=Release -G Ninja &&\
+RUN mkdir -p /workspace/weblang && cd /workspace/weblang &&\
+    git clone https://hub.fastgit.xyz/NEUQ-2084team-Compiler/weblang-compiler &&\
+    cd weblang-compiler && cmake -B $(pwd)/build -DCMAKE_BUILD_TYPE=Release -G Ninja &&\
     cmake --build $(pwd)/build && cmake --build $(pwd)/build --target install
